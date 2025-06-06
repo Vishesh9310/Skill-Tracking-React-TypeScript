@@ -10,13 +10,18 @@ export type Skill = {
     completed: boolean;
 };
 
+type SkillState = {
+    skills: Skill[];
+};
+
 type Action =
     | { type: 'ADD_SKILL'; payload: Skill }
     | { type: 'UPDATE_SKILL', payload: number }
-    | { type: 'DELETE_SKILL', payload: number };
+    | { type: 'DELETE_SKILL', payload: number }
+    | { type: 'UPDATE_SKILL_DATA', payload: Skill};
 
-type SkillState = {
-    skills: Skill[];
+const initialState: SkillState = {
+    skills: [],
 };
 
 type SkillContextType = {
@@ -24,13 +29,12 @@ type SkillContextType = {
     addSkill: (skill: Skill) => void;
     updateSkill: (id: number) => void;
     deleteSkill: (id: number) => void;
+    updateSkillData: (skill: Skill) => void;
 }
 
-const initialState: SkillState = {
-    skills: [],
-};
-
 const SkillContext = createContext<SkillContextType | undefined>(undefined);
+
+//const SkillContext = createContext<{state: SkillState; dispatch: React.Dispatch<Action>}>({state: initialState, dispatch: () => {},});
 
 function skillReducer(state: SkillState, action: Action): SkillState {
     switch (action.type) {
@@ -44,6 +48,10 @@ function skillReducer(state: SkillState, action: Action): SkillState {
             return {
                 skills: state.skills.filter((s) => s.id !== action.payload),
             };
+        case 'UPDATE_SKILL_DATA':
+            return {
+                skills: state.skills.map((s)=>s.id === action.payload.id ? {...s,skillname: action.payload.skillname, level: action.payload.level, priority: action.payload.priority, plannedDate: action.payload.plannedDate ,completed: action.payload.completed } : s),
+            };
         default:
             return state;
     }
@@ -54,9 +62,10 @@ export const SkillProvider = ({ children }: { children: ReactNode }) => {
     const addSkill = (skill: Skill) => dispatch({ type: 'ADD_SKILL', payload: skill });
     const updateSkill = (id: number) => dispatch({ type: 'UPDATE_SKILL', payload: id });
     const deleteSkill = (id: number) => dispatch({ type: 'DELETE_SKILL', payload: id });
+    const updateSkillData = (skill: Skill) => dispatch({type: 'UPDATE_SKILL_DATA', payload: skill});
 
     return (
-        <SkillContext.Provider value={{ state, addSkill, updateSkill, deleteSkill }}>
+        <SkillContext.Provider value={{ state, addSkill, updateSkill, deleteSkill, updateSkillData }}>
             {children}
         </SkillContext.Provider>
     );

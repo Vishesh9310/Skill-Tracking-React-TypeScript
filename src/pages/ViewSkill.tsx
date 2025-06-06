@@ -7,7 +7,7 @@ const ViewSkill: React.FC = () => {
 
   return (
     <div>
-      <h2 className='text-center p-5 text-xl text-blue-700 font-bold'>View Skills</h2>
+      <h2 className='text-center p-5 text-xl text-blue-600 font-bold'>View Skills</h2>
       {state.skills.length === 0
         ? (<p className='content-center text-center'>No skill added yet.</p>)
         : (<div className='grid grid-cols-4 gap-4 p-4'>

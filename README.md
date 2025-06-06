@@ -1,54 +1,135 @@
-# React + TypeScript + Vite
+# 🚀 SkillSync – Your Personal Skill Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Track, plan, and progress your technical skills the smart way.**  
+A deployable, resume-ready React + TypeScript project to organize, prioritize, and visually track your skill development journey.
 
-Currently, two official plugins are available:
+## 📌 Why SkillSync?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Covers **all major React concepts**  
+✅ Unique & **interview-friendly** (not another TODO/Blog clone)  
+✅ Clean, scalable project structure  
+✅ Deployable on Netlify/Vercel  
+✅ Perfect for portfolios, LinkedIn & resumes
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ⚛️ React + TypeScript  
+- 🎨 Tailwind CSS  
+- 🔀 React Router v6  
+- 🌗 Context API (Theme support)  
+- 💾 Custom Hooks + LocalStorage  
+- 🧩 Modular Component Architecture
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✨ Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| Feature                                  | React Concepts Covered                           |
+| ---------------------------------------- | ------------------------------------------------ |
+| 🎯 Skill Tracker                         | `useState`, props, dynamic rendering             |
+| ➕ Add / ✏️ Edit / ❌ Delete Skills       | Forms, controlled components, list operations   |
+| 📊 Progress Bar & % Calculation          | `useEffect`, derived state                       |
+| 🔍 Real-time Search                      | Controlled inputs, filter logic                  |
+| 🌗 Light/Dark Theme Toggle               | `useContext`, custom hooks, Tailwind dark mode   |
+| 📅 Weekly Skill Planner                  | Filtering, conditional rendering                 |
+| 📚 Skill Detail View                     | `React Router`, `useParams`                      |
+| 💾 LocalStorage Persistence              | Custom `useLocalStorage` Hook                    |
+| 🧭 Navigation                            | `Link`, `useNavigate`, nested routing            |
+
+---
+
+## 📁 Project Structure
+
+/skillsync
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ │ ├── MiniCalendar.tsx
+│ │ ├── Nav.tsx
+│ │ ├── ProgressBar.tsx
+│ │ ├── SkillCard.tsx
+│ │ ├── SkillChecklist.tsx
+│ │ └── UpdateSkill.tsx
+│ ├── context/
+│ │ └── SkillContext.tsx
+│ ├── pages/
+│ │ ├── Home.tsx
+│ │ ├── ViewSkill.tsx
+│ │ ├── AddSkill.tsx
+│ │ └── PlanSkill.tsx
+│ ├── types/
+│ │ └── skill.ts
+│ ├── App.tsx
+│ ├── index.css
+│ ├── main.tsx
+│ ├── vite-env.d.ts
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+
+
+---
+
+## 🖼️ UI Preview
+
+### 🏠 Home Page  
+- Welcome message  
+- Action buttons: View Skills | Add Skill | Plan Week  
+
+### 📋 Skill Tracker  
+- Grid of skill cards  
+- Priority, Level, Progress bar, Edit/Delete actions
+
+### ➕ Add Skill  
+- Form with inputs: name, category, level, priority, date  
+- Adds skill to tracker
+
+### 📅 Weekly Planner  
+- Mini calendar UI  
+- Checklist with filter by week/date  
+- Progress status
+
+---
+
+## 💡 Bonus Ideas (Optional Enhancements)
+
+- 🔃 Drag & drop reorder (`react-beautiful-dnd`)
+- 📊 Visual charts (Recharts)
+- 🧪 Unit testing (React Testing Library)
+- 🔐 Mock login with token-based auth
+
+---
+
+## 📦 How to Run Locally
+
+```bash
+git clone https://github.com/Vishesh9310/Skill-Sync.git
+cd skillsync
+npm install
+npm run dev   # or npm start
+
+🤝 Contributing
+Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
+
+📄 License
+MIT
+
+🙋‍♂️ Need Help Getting Started?
+Want a starter repo with pre-configured setup and components?
+Message me or open an issue — I’ll be happy to help you launch!
+
+Made with ❤️ by Vishesh
+
+Let me know if you want this in Hindi or bilingual (for class presentation or personal branding), or if you'd like the starter repo with boilerplate code" too.

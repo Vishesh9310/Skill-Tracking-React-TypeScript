@@ -38,7 +38,8 @@ const AddSkill: React.FC = () => {
   }
 
   return (
-    <div className='w-full h-screen p-20'>
+    <div className='w-full h-fit p-20'>
+      <h3 className='text-center font-bold text-blue-600 p-5 text-xl'>Add New Skill</h3>
       <form onSubmit={handleFormSubmit} className='bg-blue-200 p-5 rounded-lg w-200 space-y-4 m-auto'>
         <input
           type="text"

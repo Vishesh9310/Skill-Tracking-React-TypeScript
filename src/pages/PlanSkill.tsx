@@ -55,7 +55,7 @@ const PlanSkill: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">Skill Tracker</h1>
+      <h1 className="text-xl text-blue-600 font-bold mb-6 text-center">Skill Tracker</h1>
 
       <div className="mb-4 flex items-center gap-3">
         <input type="checkbox" checked={filterThisWeek} onChange={() => setFilterThisWeek(!filterThisWeek)} className="w-5 h-5"/>

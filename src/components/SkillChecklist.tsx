@@ -1,14 +1,5 @@
 import React from 'react'
-
-interface Skills{
-    id: number;
-    skillname: string;
-    level: string;
-    priority: string;
-    progress: number;
-    plannedDate: string;
-    completed: boolean;
-}
+import type { Skills } from '../type/skill';
 
 interface Props {
     skills: Skills[];
