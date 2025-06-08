@@ -1,41 +1,49 @@
-# 🚀 SkillSync – Your Personal Skill Planner
+# 🚀 SkillSync
 
-**Track, plan, and progress your technical skills the smart way.**  
-A deployable, resume-ready React + TypeScript project to organize, prioritize, and visually track your skill development journey.
-
-## 📌 Why SkillSync?
-
-✅ Covers **all major React concepts**  
-✅ Unique & **interview-friendly** (not another TODO/Blog clone)  
-✅ Clean, scalable project structure  
-✅ Deployable on Netlify/Vercel  
-✅ Perfect for portfolios, LinkedIn & resumes
+A **React + TypeScript** skill management app that allows users to **add**, **view**, **update**, and **filter** their skills. This project is designed to practice and showcase **React core concepts** like state management, routing, and component communication, all wrapped in a clean structure with a responsive UI using **Tailwind CSS**.
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 Key Features
 
-- ⚛️ React + TypeScript  
-- 🎨 Tailwind CSS  
-- 🔀 React Router v6  
-- 🌗 Context API (Theme support)  
-- 💾 Custom Hooks + LocalStorage  
-- 🧩 Modular Component Architecture
+- ✅ Add new skills with details like name, level, priority, and planned date  
+- 🔄 View and update skills in a centralized skill list  
+- 🗓️ Filter skills based on the current day of the week  
+- 🔁 Global state management using **Context API + useReducer**  
+- 🌐 Client-side routing via **React Router DOM**  
+- 🎨 Clean, responsive UI built with **Tailwind CSS**  
+- 🔹 Dynamic rendering of components using buttons  
+- 🔹 Form handling with controlled components  
+- 🔹 Skill progress tracking and planned date integration  
 
 ---
 
-## ✨ Features
+## 🧠 React Concepts Practiced
 
-| Feature                                  | React Concepts Covered                           |
-| ---------------------------------------- | ------------------------------------------------ |
-| 🎯 Skill Tracker                         | `useState`, props, dynamic rendering             |
-| ➕ Add / ✏️ Edit / ❌ Delete Skills       | Forms, controlled components, list operations   |
-| 📊 Progress Bar & % Calculation          | `useEffect`, derived state                       |
-| 🔍 Real-time Search                      | Controlled inputs, filter logic                  |
-| 📅 Weekly Skill Planner                  | Filtering, conditional rendering                 |
-| 📚 Skill Detail View                     | `React Router`, `useParams`                      |
-| 💾 LocalStorage Persistence              | Custom `useLocalStorage` Hook                    |
-| 🧭 Navigation                            | `Link`, `useNavigate`, nested routing            |
+This project was built to solidify knowledge of the following concepts:
+
+- ✅ `useState` for managing local component state  
+- ✅ `props` to pass data between components  
+- ✅ Dynamic rendering using `useState` and conditionals  
+- ✅ Controlled components for form inputs  
+- ✅ Lists for rendering dynamic skill data  
+- ✅ `useEffect` for side-effects like derived state  
+- ✅ Derived state filtering based on day of the week  
+- ✅ Filtering using conditions and `.filter()`  
+- ✅ Conditional rendering for UI logic  
+- ✅ `react-router-dom` for navigation  
+- ✅ `Link`, `useNavigate` for routing  
+- ✅ `useContext` + `useReducer` for global state management  
+
+---
+
+## ⚙️ Tech Stack
+
+- React 18  
+- TypeScript  
+- Tailwind CSS  
+- React Router DOM  
+- Context API + useReducer for state management  
 
 ---
 
@@ -47,7 +55,6 @@ A deployable, resume-ready React + TypeScript project to organize, prioritize, a
 │ ├── assets/
 │ ├── components/
 │ │ ├── MiniCalendar.tsx
-│ │ ├── Nav.tsx
 │ │ ├── ProgressBar.tsx
 │ │ ├── SkillCard.tsx
 │ │ ├── SkillChecklist.tsx
@@ -78,57 +85,30 @@ A deployable, resume-ready React + TypeScript project to organize, prioritize, a
 └── vite.config.ts
 
 
-
 ---
 
-## 🖼️ UI Preview
-
-### 🏠 Home Page  
-- Welcome message  
-- Action buttons: View Skills | Add Skill | Plan Week  
-
-### 📋 Skill Tracker  
-- Grid of skill cards  
-- Priority, Level, Progress bar, Edit/Delete actions
-
-### ➕ Add Skill  
-- Form with inputs: name, category, level, priority, date  
-- Adds skill to tracker
-
-### 📅 Weekly Planner  
-- Mini calendar UI  
-- Checklist with filter by week/date  
-- Progress status
-
----
-
-## 💡 Bonus Ideas (Optional Enhancements)
-
-- 🔃 Drag & drop reorder (`react-beautiful-dnd`)
-- 📊 Visual charts (Recharts)
-- 🧪 Unit testing (React Testing Library)
-- 🔐 Mock login with token-based auth
-
----
-
-## 📦 How to Run Locally
+## 🧪 How to Run
 
 ```bash
-git clone https://github.com/Vishesh9310/Skill-Sync.git
-cd skillsync
+git clone https://github.com/Vishesh9310/Skill-Tracking-React-TypeScript.git
+cd SkillSync
 npm install
-npm run dev   # or npm start
+npm run dev
+⚠️ Make sure you have Node.js and Vite installed. TailwindCSS is already configured.
 
-🤝 Contributing
-Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
 
-📄 License
-MIT
 
-🙋‍♂️ Need Help Getting Started?
-Want a starter repo with pre-configured setup and components?
-Message me or open an issue — I’ll be happy to help you launch!
+🔮 Future Enhancements
+🌐 API or backend storage (Firebase / Express + MySQL)
 
-Made with ❤️ by Vishesh
+📅 Skill reminder calendar
 
-Let me know if you want this in Hindi or bilingual (for class presentation or personal branding), or if you'd like the starter repo with boilerplate code" too.
+📊 Graph-based skill progress visualization
+
+🌙 Dark/Light Theme toggle
+
+📃 License
+Licensed under the MIT License. Feel free to use or modify this project for your own learning or personal use.
+
+🙌 Special Note
+This project was created for learning purposes and to implement concepts like useReducer, useContext, useNavigate, Link, props, filtering, form handling, and component switching.
