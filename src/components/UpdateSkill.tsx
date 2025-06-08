@@ -43,22 +43,22 @@ const UpdateSkill: React.FC = () => {
 
 
     return (
-        <div className='flex justify-evenly my-2'>
-            <div className='space-y-5'>
+        <div className='flex justify-evenly item-center py-30 bg-gradient-to-br from-blue-500 to-purple-500 h-screen w-screen'>
+            <div className='space-y-5 text-white opacity-80'>
                 <h2 className=' text-center p-3 bg-cyan-400 rounded-2xl text-white font-bold'>old data</h2>
                 <div>
                     <ul>
-                        <li> id: {data.id}</li>
-                        <li>skillname: {data.skillname}</li>
-                        <li>level: {data.level}</li>
-                        <li>priority: {data.priority}</li>
-                        <li>progress: {data.progress}</li>
-                        <li>plannedDate: {data.plannedDate}</li>
-                        <li>completed: {data.completed}</li>
+                        <li>Id: {data.id}</li>
+                        <li>Skillname: {data.skillname}</li>
+                        <li>Level: {data.level}</li>
+                        <li>Priority: {data.priority}</li>
+                        <li>Progress: {data.progress}</li>
+                        <li>PlannedDate: {data.plannedDate}</li>
+                        <li>Completed: {data.completed == true ? "Complete" : "Not Complete"}</li>
                     </ul>
                 </div>
             </div>
-            <div className='space-y-5'>
+            <div className='space-y-5 opacity-80'>
                 <h2 className='text-center p-3 bg-cyan-400 rounded-2xl text-white font-bold'>Update data here</h2>
                 <div>
                     <form onSubmit={handleFormSubmit} className='bg-blue-200 p-5 rounded-lg w-200 space-y-4 m-auto'>

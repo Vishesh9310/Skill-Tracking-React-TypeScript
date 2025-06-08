@@ -3,8 +3,8 @@ import Nav from '../components/Nav'
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <h2 className='text-center p-5 text-xl text-blue-700 font-bold'>Welcom to Skill Sync</h2>
+    <div className='bg-gradient-to-br from-blue-500 to-purple-500 h-screen w-full'>
+      <h2 className='text-center p-5 text-white text-xl font-bold'>Welcom to Skill Sync</h2>
       <Nav />
     </div>
   )

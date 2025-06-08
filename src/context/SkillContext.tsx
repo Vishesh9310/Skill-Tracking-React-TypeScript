@@ -16,7 +16,7 @@ type SkillState = {
 
 type Action =
     | { type: 'ADD_SKILL'; payload: Skill }
-    | { type: 'UPDATE_SKILL', payload: number }
+    | { type: 'CHECKED_SKILL', payload: number }
     | { type: 'DELETE_SKILL', payload: number }
     | { type: 'UPDATE_SKILL_DATA', payload: Skill};
 
@@ -27,7 +27,7 @@ const initialState: SkillState = {
 type SkillContextType = {
     state: SkillState;
     addSkill: (skill: Skill) => void;
-    updateSkill: (id: number) => void;
+    checkedSkill: (id: number) => void;
     deleteSkill: (id: number) => void;
     updateSkillData: (skill: Skill) => void;
 }
@@ -40,7 +40,7 @@ function skillReducer(state: SkillState, action: Action): SkillState {
     switch (action.type) {
         case 'ADD_SKILL':
             return { skills: [...state.skills, action.payload] };
-        case 'UPDATE_SKILL':
+        case 'CHECKED_SKILL':
             return {
                 skills: state.skills.map((s) => s.id === action.payload ? { ...s, completed: !s.completed } : s),
             };
@@ -60,12 +60,12 @@ function skillReducer(state: SkillState, action: Action): SkillState {
 export const SkillProvider = ({ children }: { children: ReactNode }) => {
     const [state, dispatch] = useReducer(skillReducer, initialState);
     const addSkill = (skill: Skill) => dispatch({ type: 'ADD_SKILL', payload: skill });
-    const updateSkill = (id: number) => dispatch({ type: 'UPDATE_SKILL', payload: id });
+    const checkedSkill = (id: number) => dispatch({ type: 'CHECKED_SKILL', payload: id });
     const deleteSkill = (id: number) => dispatch({ type: 'DELETE_SKILL', payload: id });
     const updateSkillData = (skill: Skill) => dispatch({type: 'UPDATE_SKILL_DATA', payload: skill});
 
     return (
-        <SkillContext.Provider value={{ state, addSkill, updateSkill, deleteSkill, updateSkillData }}>
+        <SkillContext.Provider value={{ state, addSkill, checkedSkill, deleteSkill, updateSkillData }}>
             {children}
         </SkillContext.Provider>
     );

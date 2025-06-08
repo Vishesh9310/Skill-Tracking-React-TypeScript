@@ -32,7 +32,6 @@ A deployable, resume-ready React + TypeScript project to organize, prioritize, a
 | ➕ Add / ✏️ Edit / ❌ Delete Skills       | Forms, controlled components, list operations   |
 | 📊 Progress Bar & % Calculation          | `useEffect`, derived state                       |
 | 🔍 Real-time Search                      | Controlled inputs, filter logic                  |
-| 🌗 Light/Dark Theme Toggle               | `useContext`, custom hooks, Tailwind dark mode   |
 | 📅 Weekly Skill Planner                  | Filtering, conditional rendering                 |
 | 📚 Skill Detail View                     | `React Router`, `useParams`                      |
 | 💾 LocalStorage Persistence              | Custom `useLocalStorage` Hook                    |

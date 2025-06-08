@@ -27,7 +27,7 @@ const getCurrentWeekDates = (): string[] => {
 
 
 const PlanSkill: React.FC = () => {
-  const {state, updateSkill}= useSkill();
+  const {state, checkedSkill}= useSkill();
   const [skills, setSkills] = useState<Skills[]>(state.skills);
   const [filterThisWeek, setFilterThisWeek] = useState<boolean>(false);
   const weekDates = getCurrentWeekDates();
@@ -44,8 +44,7 @@ const PlanSkill: React.FC = () => {
     
     const skillToUpdate = state.skills.find(skill => skill.id === id) ;
     if(skillToUpdate != undefined){
-      const updated = {...skillToUpdate, completed: !skillToUpdate.completed};
-      updateSkill(id, updated);
+      checkedSkill(id);
     }
   };
 
@@ -54,10 +53,10 @@ const PlanSkill: React.FC = () => {
     : skills;
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-xl text-blue-600 font-bold mb-6 text-center">Skill Tracker</h1>
+    <div className=" p-6 bg-gradient-to-br from-blue-500 to-purple-500 h-screen w-full">
+      <h1 className="text-xl text-white font-bold mb-6 text-center">Skill Tracker</h1>
 
-      <div className="mb-4 flex items-center gap-3">
+      <div className="mb-4 flex items-center gap-3 text-white">
         <input type="checkbox" checked={filterThisWeek} onChange={() => setFilterThisWeek(!filterThisWeek)} className="w-5 h-5"/>
         <label className="text-lg font-medium">Show only this week's skills</label>
       </div>

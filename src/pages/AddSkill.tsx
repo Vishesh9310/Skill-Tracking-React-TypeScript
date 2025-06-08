@@ -38,16 +38,16 @@ const AddSkill: React.FC = () => {
   }
 
   return (
-    <div className='w-full h-fit p-20'>
-      <h3 className='text-center font-bold text-blue-600 p-5 text-xl'>Add New Skill</h3>
-      <form onSubmit={handleFormSubmit} className='bg-blue-200 p-5 rounded-lg w-200 space-y-4 m-auto'>
+    <div className='w-full h-screen p-20 bg-gradient-to-br from-blue-500 to-purple-500'>
+      <h3 className='text-center font-bold bg-none text-white p-5 text-xl'>Add New Skill</h3>
+      <form onSubmit={handleFormSubmit} className='opacity-80 p-10 rounded-lg w-fit space-y-4 m-auto bg-blue-200'>
         <input
           type="text"
           name='skillname'
           value={skill.skillname}
           onChange={handleChange}
           placeholder='Enter Skill Name'
-          className='w-full outline-none p-2 rounded'
+          className='w-full outline-none p-2 rounded text-black'
           required
         />
 
